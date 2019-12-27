@@ -1,0 +1,111 @@
+body{
+	background: black;
+	text-align: center;
+	font-family: 'Kanit', sans-serif;
+	color: white;
+
+}
+
+p{
+	text-align: left;
+	white-space: pre-line;
+}
+
+.row{
+	margin-bottom: 40px;
+}
+
+#author_name{
+	font-size: 50px;
+	background-color: #BC0000;
+	display: inline-block;
+  	vertical-align: middle;
+  	padding: 3px 5px;
+  	margin: 50px;
+}
+
+#port_title{
+	background-color: gray;
+	font-size: 20px;
+}
+
+.catalog {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px 0 20px 20px;
+  background: black;
+}
+
+.booklist {
+  width: 400px;
+  height: 450px;
+}
+
+.bookbox {
+  background: black;
+  padding: 30px 15px;
+  margin: 0 20px 20px 0;
+  border-radius: 5px;
+  text-align: center;
+  height: 230px;
+}
+
+.bookpic {
+  margin: 0 0 5px 0;
+  width: 200px;
+  height: 291px;
+}
+
+h3 {
+  margin: 10px;
+}
+
+.jumbotron {
+  margin:0px 0px 0px 0px;
+  background: url(pic/bgpage.jpg) no-repeat center center fixed;
+  background-size: cover;
+  background-position: top  center;
+  height: 600px;
+  font-family: 'Chonburi', cursive;
+  color: #BC0000;
+  font-size: 7em;
+} 
+
+.jumbotron p {
+  position: absolute;
+  left: 10%;
+}
+
+
+.button-panel {
+	margin: 2em 0 0;
+	width: 30%;
+	margin-left: 42%;
+}
+
+.button-panel .button {
+	background: #9B0000;
+	border: none;
+	color: #fff;
+	cursor: pointer;
+	height: 50px;
+	font-size: 0.95em;
+	letter-spacing: 0.05em;
+	text-align: center;
+	text-transform: uppercase;
+	width: 50%;
+}
+
+.button:hover {
+	background: #7C0400;
+}
+
+
+nav{
+    background-color: #BC0000;
+}
+
+ #author_name{
+	 margin-top:100px;
+ }

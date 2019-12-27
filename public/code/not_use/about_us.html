@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="http://www.jacklmoore.com/colorbox/example1/colorbox.css" />
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="http://www.jacklmoore.com/colorbox/jquery.colorbox.js"></script>
+    <script type="text/javascript" src="about_us_js.js" defer></script>
+    <script type="text/javascript" src="bottom-page.js" defer></script>
+	<link rel="stylesheet" type="text/css" href="about_us_css.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Prompt" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Niramit" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Charm" rel="stylesheet">
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+
+<body>
+
+<section class="cover text-center">
+	<nav class="navbar navbar-expand-lg navbar-dark bg-transparent" id="topbar">
+        <form class="form-inline ml-auto"> 
+    		<button class="btn" type="button" id='cart'><i class="fas fa-shopping-cart"></i>    ตะกร้าสินค้า</button>
+    			<div class="btn-group" role="group" aria-label="log">
+    				<button class="btn btn-sm" type="button" id="login">เข้าสู่ระบบ</button>
+    				<button class="btn btn-sm" type="button" id='regis'>สมัครสมาชิก</button>
+  				</div>
+  		</form>
+    </nav>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-transparent navbar-static-top" id='mainbar'>
+        <div class="navbar-collapse collapse w-100 dual-collapse2 order-1 order-md-0">
+            <ul class="navbar-nav ml-auto text-center">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#" id="about_us">เกี่ยวกับเรา</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" id="book">หนังสือ</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="mx-auto my-2 order-0 order-md-1 position-relative">
+            <a class="mx-auto" href="#">
+                <img src="pic/logo.png" width="300" height="mx-auto">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+
+        <div class="navbar-collapse collapse w-100 dual-collapse2 order-2 order-md-2">
+            <ul class="navbar-nav mr-auto text-center">
+                <li class="nav-item">
+                    <a class="nav-link" href="#" id="author">นักเขียน</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" id="search">ค้นหา</a>
+                </li>
+            </ul>
+        </div>
+	</nav>
+
+	<div class="cover-container pb-2">
+		<div class="cover-inner container">
+			<h1 class="jumbotron-heading">มาร่วม  <span id='shock'>สะพรึง!!</span>  ไปกับเรา</h1>
+		</div>
+	</div>
+</section>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-12" id='about'>
+			<img src="pic/logo.png" alt="logo" width="500" height="mx-auto">;
+			<div id='welcome'>
+				The Cruffin Publishing<br>ขอต้อนรับนักอ่านทุกท่าน
+			</div>
+			<div id='vision'>
+				'ความหลอนที่สามารถสัมผัสได้ด้วยมือคุณ'
+			</div>
+		</div>
+	</div>
+    <div class="row">
+         <div class="col-md-5" id="tcf_logo">
+             <img src="pic/logo.png" width=400px height="auto">
+         </div>
+         <div class="col-md-7">
+            <p>
+                <h4>
+                    <div id="p1">สำนักพิมพ์ The Cruffin</div> คือสำนักพิมพ์ที่เกิดจากการรวมกันของนักเขียนแนวสยองขวัญชั้นนำของประเทศไทย เป็นสำนักพิมพ์ที่รวบรวมความหลอนจากทั่วทุกมุมโลก สู่นิยายสยองขวัญคุณภาพ พร้อมจัดส่งความหลอนให้คุณได้ทุกที่ ทุกเวลา หรือหาได้ตามร้านหนังสือชั้นนำทั่วไป
+                </h4>
+         </div>
+    </div>
+    <div class="row" id="pcy">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <p>
+                <h5>
+                    <div id="p2">ปรัชญาในการทำงาน</div>ของ สำนักพิมพ์ The Cruffin คือ การทำงานด้วยหัวใจของผู้ผลิตที่เป็นนักอ่าน<br>
+                    เราจึงใส่ใจในทุกรายละเอียดตัวอักษร เพื่อผลิตหนังสือที่ดี มีคุณภาพ<br> 
+                    ที่นอกจากนักอ่านจะได้รับความบันเทิงแล้ว
+                    ด้านในยังมีเนื้อหาที่สอดแทรกคติธรรม<br>ในการนำไปคิดและประยุกต์ใช้ในการดำเนินชีวิตได้ด้วย<br>
+                    <br>
+                    ให้หนังสือของเราเป็นหนึ่งในทางเลือกของการใช้เวลาว่างให้เป็นประโยชน์<br> 
+                    เพื่อความสุขของนักอ่านทุกคน... To be happy, To be reader
+                </h5>
+            </p>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+</div>
+
+<div class="bottom-page">
+    <div class="container">
+        <div class="row">
+            <div id="about_contact">
+             </div>
+        </div>
+    <div class="row">
+        <div class="col-md-4">
+            <p>
+                บริษัท เดอะครัฟฟินพับบลิชชิง จำกัด<br>
+                <br>
+                126 ถนนประชาอุทิศ แขวงบางมด<br>
+                เขตทุ่งครุ กรุงเทพฯ 10140
+            </p>    
+        </div>
+        <div class="col-md-4">
+            <p>
+                โทร  : 0-2470-8000<br>
+                <br>
+                อีเมล : The_Cruffin@hotmail.com
+            </p>
+        </div>
+        <div class="col-md-4" id="link-menu">    
+                    <div id="bt-about_us" href='/'>เกี่ยวกับเรา</div>
+                    <div id="bt-book" href='/book'>หนังสือ</div>
+                    <div id="bt-author" href='/author'>นักเขียน</div>
+                    <div id="bt-search" href='/search'>ค้นหา</div>
+        </div>
+    </div>
+        
+    </div>
+</div>
+
+</body>
+
+</html>

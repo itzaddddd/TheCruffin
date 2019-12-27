@@ -1,0 +1,91 @@
+<html>
+<head>
+	<title>The Cruffin - ค้นหา</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="search_css.css">
+	<link href="https://fonts.googleapis.com/css?family=Prompt" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Chonburi&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Kanit&display=swap" rel="stylesheet">
+
+</head>
+<body>
+<nav class="nav navbar navbar-expand-lg navbar-dark fixed-top">
+  <a class="navbar-brand" href="/">The Cruffin</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="/book">นิยาย<span class="sr-only">(current)</span></a>
+      </li>
+			<li class="nav-item">
+        <a class="nav-link" href="/author">นักเขียน</a>
+      </li>
+			<li class="nav-item">
+        <a class="nav-link" href="/search">ค้นหา</a>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+			<%if(session.cart){%>
+			<li class="nav-item">
+        <a class="nav-link" href="/cart"><i class="fas fa-shopping-cart"></i>ตะกร้าสินค้า  <span class='badge badge-secondary'><%= session.cart.totalQty%></span></a>
+      </li>
+			<%}else{%>
+				<li class="nav-item">
+        <a class="nav-link" href="/cart"><i class="fas fa-shopping-cart"></i>ตะกร้าสินค้า </a>
+      </li>
+			<%}%>
+			<%if(!login){%>
+			<li class="nav-item">
+        <a class="nav-link" href="/regis">สมัครสมาชิก</a>
+      </li>
+			<li class="nav-item">
+        <a class="nav-link" href="/login">เข้าสู่ระบบ</a>
+      </li>
+			<%}else{%>
+			<li class="nav-item">
+        <a class="nav-link" href="/user"><%=user.username%></a>
+      </li>
+			<li class="nav-item">
+        <a class="nav-link" href="/logout">ออกจากระบบ</a>
+      </li>
+			<%}%>
+		</ul>
+  </div>
+</nav>
+
+	<div class="jumbotron jumbotron-fluid">
+	  <div class="container">
+	    <p><b>ค้นหา</b></p>
+	  </div>
+	</div>
+
+	<center><img src="/pic/logo.png" id="logo" width="400" height="mx-auto" margin="0"></center>
+
+	<div class="form-wrapper-main">
+		<h1>ค้นหา</h1>
+		<div class="form-wrapper">
+		<form>
+			<h2>ค้นหาจาก</h2>
+			<select name="filter">
+				<option value="b_name">ชื่อหนังสือ</option>
+				<option value="b_author">ชื่อผู้แต่ง</option>
+			</select>
+			<div class="form-item">
+				<h2>คำค้น</h2>
+      			<input type="text" name="search">
+    		</div>
+    		<div class="button-panel">
+      			<input type="submit" class="button" value="ค้นหา">
+      		</div>	
+		</form>
+		</div>
+		<p>&nbsp;</p>
+		<h1>ผลการค้นหา</h1>
+	</div>
+</body>
+</html>

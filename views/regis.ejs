@@ -1,0 +1,167 @@
+<html>
+<head>
+	<title>The Cruffin - สมัครสมาชิก</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="regis_css.css">
+	<link href="https://fonts.googleapis.com/css?family=Prompt" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="regis_js.js" defer></script>
+	<link href="https://fonts.googleapis.com/css?family=Kanit&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Chonburi&display=swap" rel="stylesheet">
+
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<nav class="nav navbar navbar-expand-lg navbar-dark fixed-top">
+  <a class="navbar-brand" href="/">The Cruffin</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="/book">นิยาย<span class="sr-only">(current)</span></a>
+      </li>
+			<li class="nav-item">
+        <a class="nav-link" href="/author">นักเขียน</a>
+      </li>
+			<li class="nav-item">
+        <a class="nav-link" href="/search">ค้นหา</a>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+			<%if(session.cart){%>
+			<li class="nav-item">
+        <a class="nav-link" href="/cart"><i class="fas fa-shopping-cart"></i>ตะกร้าสินค้า  <span class='badge badge-secondary'><%= session.cart.totalQty%></span></a>
+      </li>
+			<%}else{%>
+				<li class="nav-item">
+        <a class="nav-link" href="/cart"><i class="fas fa-shopping-cart"></i>ตะกร้าสินค้า </a>
+      </li>
+			<%}%>
+			<%if(!login){%>
+			<li class="nav-item">
+        <a class="nav-link" href="/regis">สมัครสมาชิก</a>
+      </li>
+			<li class="nav-item">
+        <a class="nav-link" href="/login">เข้าสู่ระบบ</a>
+      </li>
+			<%}else{%>
+			<li class="nav-item">
+        <a class="nav-link" href="/user"><%=user.username%></a>
+      </li>
+			<li class="nav-item">
+        <a class="nav-link" href="/logout">ออกจากระบบ</a>
+      </li>
+			<%}%>
+		</ul>
+  </div>
+</nav>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <p><b>สมัครสมาชิก</b></p>
+  </div>
+</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="regis_title col-md-12">
+			<center><img src="pic/logo.png" width="400" height="mx-auto" margin="0"></center>
+				สมัครสมาชิก
+			</div>
+		</div>
+	</div>
+	<div class="form-wrapper-main">
+	<form action="/regis" method="POST">
+	<h1>ข้อมูลสมาชิก</h1>
+		<div class="form-wrapper">
+    		<div class="form-item">
+      			<label for="username">ชื่อผู้ใช้*</label>		
+      			<input type="text" name="username" required="required">
+    		</div>
+    		<div class="form-item">
+      			<label for="password">รหัสผ่าน*</label>		
+      			<input type="password" name="password1" required="required">
+    		</div>
+    		<div class="form-item">
+      			<label for="email">ใส่อีเมล*</label>		
+      			<input type="email" name="email" required="required">
+    		</div>
+    	</div>	
+	<h1>ข้อมูลส่วนตัว</h1>
+		<div class="form-wrapper">
+    		<div class="form-item">
+      			<label for="name">ชื่อ*</label>		
+      			<input type="text" name="firstname" required="required">
+    		</div>
+    		<div class="form-item">
+      			<label for="surname">นามสกุล*</label>		
+      			<input type="text" name="lastname" required="required">
+    		</div>
+    		<div class="form-footer">
+      			<label for="gender">เพศ*</label>		
+      			<input type="radio" name="gender" value="ชาย" required="required"> ผู้ชาย
+      			<input type="radio" name="gender" value="หญิง" required="required"> ผู้หญิง
+    		</div>
+    	</div>
+    <h1>ข้อมูลที่อยู่</h1>
+		<div class="form-wrapper">
+    		<div class="form-item">
+      			<label for="เลขที่">เลขที่*</label>		
+      			<input type="text" name="addr_house_no" required="required">
+    		</div>
+    		<div class="form-item">
+      			<label for="หมู่บ้าน">หมู่บ้าน</label>		
+      			<input type="text" name="addr_village">
+    		</div>
+    		<div class="form-item">
+      			<label for="หมู่ที่">หมู่ที่</label>		
+      			<input type="text" name="addr_village_no">
+    		</div>
+    		<div class="form-item">
+      			<label for="ซอย">ซอย</label>		
+      			<input type="text" name="addr_lane">
+    		</div>
+    		<div class="form-item">
+      			<label for="ถนน">ถนน</label>		
+      			<input type="text" name="addr_road">
+    		</div>
+    		<div class="form-item">
+      			<label for="จังหวัด">จังหวัด*</label>		
+      			<input type="text" name="addr_province" required="required">
+    		</div>
+    		<div class="form-item">
+      			<label for="อำเภอ">อำเภอ*</label>		
+      			<input type="text" name="addr_district" required="required">
+    		</div>
+    		<div class="form-item">
+      			<label for="ตำบล">ตำบล*</label>		
+      			<input type="text" name="addr_sub_district" required="required">
+    		</div>
+    		<div class="form-item">
+      			<label for="รหัสไปรษณีย์">รหัสไปรษณีย์*</label>		
+      			<input type="text" name="addr_postal_code" required="required">
+    		</div>
+    		<div class="form-item">
+      			<label for="ชื่อผู้ติดต่อ">ชื่อผู้ติดต่อ</label>		
+      			<input type="text" name="contact_name">
+    		</div>
+    		<div class="form-item">
+      			<label for="เบอร์โทรศัพท์มือถือ">เบอร์โทรศัพท์มือถือ*</label>		
+      			<input type="tel" name="phone_number" pattern="[0-9]{10}" required="required">
+    		</div>
+    	</div>
+    	<div class="button-panel">
+      		<input type="submit" class="button" value="ยืนยันข้อมูล">
+      	</div>	
+      	</form>
+		<div class="button-panel">
+      		<a href='/'><button class="button">ยกเลิก</button></a>
+      	</div>
+
+	</div>
+</body>
+</html>

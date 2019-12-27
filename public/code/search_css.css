@@ -1,0 +1,170 @@
+@media (max-width: 500px) {
+	article {
+	margin: 0 2px;
+	}
+	}
+	
+	body {
+		background: black;
+		font-family: 'Kanit', sans-serif;
+		color: #fafafa;
+	}
+	
+	.form-wrapper-main {
+			background: black;
+			margin:3em auto;
+			padding: 0 1em;
+			max-width: 1300px;
+	}
+	
+	h1 {
+		padding-left: 40px;
+		background: #f72c2c;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		margin: 40px;
+	}
+	
+	
+	.form-wrapper {
+			background: black;
+			margin:1em auto;
+			padding: 0 1em;
+			max-width: 1100px;
+	}
+	
+	h2 {
+		display: inline-block;
+		vertical-align: middle;
+		padding: 3px 5px;
+		text-align: right;
+	}
+	
+	h3 {
+		margin: 0;
+	}
+	
+	select {
+			 font-size: 1em;
+			 height: 34px;
+			 width: 30%;
+	}
+	
+	.form-item {
+			margin-bottom: 0.75em;
+			width: 90%;
+	}
+	
+	.form-item input {
+			background: #fafafa;
+			border: none;
+			border: 2px solid #BC0000;
+			color: black;
+			font-size: 1em;
+			width: 90%;
+	}
+	
+	.form-item input:focus {
+			border: 2px solid #BC0000;
+			outline: none;
+	}
+	
+	.button-panel {
+			margin: 2em 0 0;
+			width: 30%;
+			margin-left: 42%;
+	}
+	
+	.button-panel .button {
+			background: red;
+			border: none;
+			color: #fff;
+			cursor: pointer;
+			height: 50px;
+			font-size: 1.3em;
+			letter-spacing: 0.05em;
+			text-align: center;
+			text-transform: uppercase;
+			width: 50%;
+	}
+	
+	.button:hover {
+			background: #7C0400;
+	}
+	
+	h5 {
+		color: black;
+		border-bottom: 5px solid #BC0000;
+	}
+	
+	.catalog {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		padding: 20px 0 20px 20px;
+		background: black;
+	}
+	
+	.booklist {
+		width: 400px;
+		height: 450px;
+	}
+	
+	.bookbox {
+		background: black;
+		padding: 30px 15px;
+		margin: 0 20px 20px 0;
+		border-radius: 5px;
+		text-align: center;
+		height: 230px;
+	}
+	
+	.bookpic {
+		margin: 0 0 5px 0;
+		width: 200px;
+		height: 291px;
+	}
+	
+	.addtocart {
+		color: #fafafa;
+		margin: 0;
+		background: red;
+		border: none;
+		padding: 5px;
+	}
+	
+	.addtocart:hover {
+		background: #7C0400;
+	}
+	
+	.jumbotron {
+		margin:0px 0px 0px 0px;
+		background: url(/pic/bgpage.jpg) no-repeat center center fixed;
+		background-size: cover;
+		background-position: top  center;
+		height: 800px;
+		font-family: 'Chonburi', cursive;
+		color: #BC0000;
+		font-size: 10em;
+	} 
+	
+	.jumbotron p {
+		position: absolute;
+		left: 10%;
+		padding-top: 1em;
+	}
+	
+	nav{
+			background-color: #BC0000;
+	}
+	
+	.bottom-page{
+		background-color: #7C0400;
+		padding: 10px;
+		color: white;
+		margin-top: 100px;
+	}
+
+	#logo{
+		margin-top:60px;
+	}

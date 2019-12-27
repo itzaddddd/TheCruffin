@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<script type="text/javascript" src="navbar_js.js" defer></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+	<link rel="stylesheet" type="text/css" href="ad_main_css.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Prompt" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Niramit" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Charm" rel="stylesheet">
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark">
+ 	 	<a class="navbar-brand" href="#">The_Curffin</a>
+  		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    	<span class="navbar-toggler-icon"></span>
+ 		</button>
+  		<div class="collapse navbar-collapse" id="navbarNavDropdown">
+    		<ul class="navbar-nav">
+      			<li class="nav-item active">
+        			<a class="nav-link" href="#">ข้อมูลเจ้าหน้าที่<span class="sr-only">(current)</span></a>
+      			</li>
+      		<li class="nav-item">
+       			<a class="nav-link" href="#" id="ad_book">ข้อมูลสินค้า</a>
+      		</li>
+      		<li class="nav-item">
+        		<a class="nav-link" href="#" id="ad_au">ข้อมูลนักเขียน</a>
+      		</li>
+      		<li class="nav-item">
+      			<a class="nav-link" href="#" id="ad_buy">ข้อมูลการสั่งซื้อ</a>
+      		</li>
+      		<li class="nav-item">
+      			<a class="nav-link" href="#" id="ad_user">ข้อมูลผู้ใช้</a>
+      		</li>
+      		<li class="nav-item">
+      			<a class="nav-link" href="#" id="ad_store">ไปที่ร้านค้า</a>
+      		</li>
+    		</ul>
+  		</div>
+	</nav>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<center><table id="staff_info">
+					<tr>
+						<td id="staff_title">ช้อมูลเจ้าหน้าที่</td>
+					</tr>
+					<tr>
+						<td>
+							<img src="pic/author/paki.jpg" width="200" height="200">
+						</td>
+						<td id="blank" width="40">
+						</td>
+						<td>
+							<p>
+								รหัสพนักงาน : 10003<br>
+								ชื่อ : ภาคินัย กสิรักษ์<br>
+								ตำแหน่ง : web master<br>
+								เบอร์โทรศัพท์ : 095-4598588<br>
+								อีเมล : paki_1995@gmail.com<br>
+							</p>
+						</td>
+					</tr>
+				</table></center>
+				<div class="caption">ข้อมูลพนักงานทั้งหมด</div>
+				<table id="staff_all">
+					<colgroup>
+						<col width="10">
+						<col width="10">
+						<col width="10">
+						<col width="200">
+						<col width="10">
+						<col width="30">
+						<col width="10">
+						<col width="30">
+					</colgroup>
+					<tr>
+						<th>ลำดับ</th>
+						<th>ID</th>
+						<th>รูปภาพ</th>
+						<th>ชื่อ</th>
+						<th>ตำแหน่ง</th>
+						<th>เบอร์โทรศัพท์</th>
+						<th>อีเมลล์</th>
+						<th>จัดการ</th>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>10001</td>
+						<td><img src="pic/author/maya.jpg"></td>
+						<td>มายาโรส เอลิน</td>
+						<td>web admin</td>
+						<td>0853423433</td>
+						<td>mayarose_1994@gmail.com</td>
+						<td>
+							<a href="#">ลบ</a>
+							<a href="#">แก้ไข</a>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

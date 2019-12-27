@@ -1,0 +1,98 @@
+<html>
+<head>
+	<title></title>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<script type="text/javascript" src="/navbar_js.js" defer></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+	<link rel="stylesheet" type="text/css" href="/ad_main_css.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Prompt" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Niramit" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Charm" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Kanit&display=swap" rel="stylesheet">
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<body>
+<nav class="nav navbar navbar-expand-lg navbar-dark fixed-top">
+  <a class="navbar-brand" href="/">The Cruffin</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+		<li class="nav-item">
+        	<a class="nav-link" href="/admin">หน้าหลัก<span class="sr-only">(current)</span></a>
+      	</li>
+    	<li class="nav-item">
+        	<a class="nav-link" href="/admin/book">ข้อมูลสินค้า<span class="sr-only"></a>
+      	</li>
+		<li class="nav-item">
+        	<a class="nav-link" href="/admin/au">ข้อมูลนักเขียน</a>
+      	</li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+		<li class="nav-item">
+        	<a class="nav-link" href="/book">ไปที่ร้านค้า</a>
+      	</li>
+		<li class="nav-item">
+        	<a class="nav-link" href="/user"><%=user.username%></a>
+      	</li>
+		<li class="nav-item">
+        	<a class="nav-link" href="/logout">ออกจากระบบ</a>
+      	</li>
+	</ul>
+  </div>
+</nav>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+			<p>
+				The Cruffin Publishing<br>
+				ยินดีต้อนรับเข้าสู่ระบบจัดการเว็บไซต์	
+			</p>
+
+			</div>
+		</div>
+	</div>
+				<%# <div class="caption">ข้อมูลพนักงานทั้งหมด</div>
+				<table id="staff_all">
+					<colgroup>
+						<col width="10">
+						<col width="10">
+						<col width="10">
+						<col width="200">
+						<col width="10">
+						<col width="30">
+						<col width="10">
+						<col width="30">
+					</colgroup>
+					<tr>
+						<th>ลำดับ</th>
+						<th>ID</th>
+						<th>รูปภาพ</th>
+						<th>ชื่อ</th>
+						<th>ตำแหน่ง</th>
+						<th>เบอร์โทรศัพท์</th>
+						<th>อีเมลล์</th>
+						<th>จัดการ</th>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>10001</td>
+						<td><img src="pic/author/maya.jpg"></td>
+						<td>มายาโรส เอลิน</td>
+						<td>web admin</td>
+						<td>0853423433</td>
+						<td>mayarose_1994@gmail.com</td>
+						<td>
+							<a href="#">ลบ</a>
+							<a href="#">แก้ไข</a>
+						</td>
+					</tr>
+				</table>
+			</div> %>
+</body>
+</html>

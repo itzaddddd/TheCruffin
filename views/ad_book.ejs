@@ -1,0 +1,96 @@
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="http://www.jacklmoore.com/colorbox/example1/colorbox.css" />
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="http://www.jacklmoore.com/colorbox/jquery.colorbox.js"></script>
+	<script type="text/javascript" src="/ad_book_js.js" defer></script>
+	<link rel="stylesheet" type="text/css" href="/ad_book_css.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Prompt&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Niramit" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Charm" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Kanit&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Chonburi&display=swap" rel="stylesheet">
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<body>
+<nav class="nav navbar navbar-expand-lg navbar-dark fixed-top">
+  <a class="navbar-brand" href="/">The Cruffin</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+		<li class="nav-item">
+        	<a class="nav-link" href="/admin">หน้าหลัก<span class="sr-only">(current)</span></a>
+      	</li>
+    	<li class="nav-item">
+        	<a class="nav-link" href="/admin/book">ข้อมูลสินค้า</a>
+      	</li>
+		<li class="nav-item">
+        	<a class="nav-link" href="/admin/au">ข้อมูลนักเขียน</a>
+      	</li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+		<li class="nav-item">
+        	<a class="nav-link" href="/book">ไปที่ร้านค้า</a>
+      	</li>
+		<li class="nav-item">
+        	<a class="nav-link" href="/user"><%=user.username%></a>
+      	</li>
+		<li class="nav-item">
+        	<a class="nav-link" href="/logout">ออกจากระบบ</a>
+      	</li>
+	</ul>
+  </div>
+</nav>
+
+	<div class="caption">ข้อมูลสินค้า</div>
+		<button class="book_add">เพิ่มสินค้า</button>
+
+		<div class="search">
+			<form class="form-inline active-cyan-4">
+  			<input class="form-control form-control-sm mr-3 w-60" type="text" placeholder="Search" aria-label="Search">
+  			<i class="fas fa-search"></i>
+			</form>
+		</div>
+		<center><table id="staff_all">
+			<tr class='htable'>
+				<th width='1%'>ลำดับ</th>
+				<th width='10%'>ชื่อหนังสือ</th>
+				<th width='13%'>ปกหนังสือ</th>
+				<th width='7%'>ชื่อผู้แต่ง</th>
+				<th width='2%'>ราคา</th>
+				<th width='15%'>ISBN</th>
+				<th width='15%'>คำโปรย</th>
+				<th width='30%'>เรื่องย่อ</th>
+				<th width='2%'>หน้า</th>
+				<th width='5%'>จัดการ</th>
+			</tr>
+			<% products.forEach(function(product,index){%>
+			<tr>
+				<td><%= index+1%></td>
+				<td><%= product.b_name%></td>
+				<td><img src="<%= product.b_cover %>" /></td>
+				<td><%= product.b_author%></td>
+				<td><%= product.b_price%> บาท</td>
+				<td><%= product.b_ISBN%></td>
+				<td><%= product.b_tag%></td>
+				<td><%= product.b_story%></td>
+				<td><%= product.b_page%> หน้า</td>
+				<td>
+				<form action="/admin/book/<%= product._id%>?_method=DELETE" method="POST"><button class='btn btn-link'>ลบ</button></form><br>
+				<a href="/admin/book/<%= product._id%>">แก้ไข</a>
+				</td>
+			</tr>
+			<% }); %>
+		</table></center>
+	</div>
+
+</body>
+</html>

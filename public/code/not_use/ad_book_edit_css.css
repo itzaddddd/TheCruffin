@@ -1,0 +1,26 @@
+body{
+	background: black;
+	text-align: left;
+	font-family: 'Prompt', sans-serif;
+	color: white;
+
+}
+
+.title{
+	background-color: brown;
+	font-size: 20px;
+	padding: 20px;
+	text-align: center;
+}
+
+.b_form{
+	margin-bottom: 5px;
+}
+
+#button_submit{
+	text-align: center;
+}
+
+#edit_book{
+	margin: 50px;
+}

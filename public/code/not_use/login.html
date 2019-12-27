@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>The Cruffin - เข้าสู่ระบบ</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <link rel="stylesheet" href="http://www.jacklmoore.com/colorbox/example1/colorbox.css" />
+	<link rel="stylesheet" type="text/css" href="login_css.css">
+	<link href="https://fonts.googleapis.com/css?family=Prompt" rel="stylesheet">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="http://www.jacklmoore.com/colorbox/jquery.colorbox.js"></script>
+   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+
+    <script type="text/javascript" src="login_js.js" defer></script>
+</head>
+<body>
+	<div class="form-wrapper">
+  	<form action="/" method="POST">
+    	<div class="form-item">
+      		<label for="username">ชื่อผู้ใช้</label>
+      		<input type="username" name="username" required="required"></input>
+    	</div>
+    	<div class="form-item">
+      		<label for="password">รหัสผ่าน</label>
+      		<input type="password" name="password" required="required"></input>
+    	</div>
+    	<div class="button-panel">
+      		<input type="submit" class="button" value="เข้าสู่ระบบ"></input>
+    	</div>
+  	</form>
+  		<div class="form-footer">
+    		<input id="check" type="checkbox" class="check" checked>
+			<label for="check"><span class="icon"></span>ให้ฉันอยู่ในระบบต่อไป</label>
+    		<!-- <p id="forgot"><a href="email.html">ลืมรหัสผ่าน</a></p> -->
+  		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,197 @@
+<html>
+<head>
+
+	<title></title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="book_js.js" defer></script>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="http://www.jacklmoore.com/colorbox/jquery.colorbox.js"></script>
+
+	<!-- <link rel="stylesheet" type="text/css" href="book_css.css"> -->
+	<link rel="stylesheet" type="text/css" href="book_css.css">
+	<link rel="stylesheet" href="http://www.jacklmoore.com/colorbox/example1/colorbox.css" />
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Prompt" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Niramit" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Charm" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Kanit&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Chonburi&display=swap" rel="stylesheet">
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<body>
+<nav class="nav navbar navbar-expand-lg navbar-dark fixed-top">
+  <a class="navbar-brand" href="/">The Cruffin</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="/book">นิยาย<span class="sr-only">(current)</span></a>
+      </li>
+			<li class="nav-item">
+        <a class="nav-link" href="/author">นักเขียน</a>
+      </li>
+			<li class="nav-item">
+        <a class="nav-link" href="/search">ค้นหา</a>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+			<%if(session.cart){%>
+			<li class="nav-item">
+        <a class="nav-link" href="/cart"><i class="fas fa-shopping-cart"></i>ตะกร้าสินค้า  <span class='badge badge-secondary'><%= session.cart.totalQty%></span></a>
+      </li>
+			<%}else{%>
+				<li class="nav-item">
+        <a class="nav-link" href="/cart"><i class="fas fa-shopping-cart"></i>ตะกร้าสินค้า </a>
+      </li>
+			<%}%>
+			<%if(!login){%>
+			<li class="nav-item">
+        <a class="nav-link" href="/regis">สมัครสมาชิก</a>
+      </li>
+			<li class="nav-item">
+        <a class="nav-link" href="/login">เข้าสู่ระบบ</a>
+      </li>
+			<%}else{%>
+			<li class="nav-item">
+        <a class="nav-link" href="/user"><%=user.username%></a>
+      </li>
+			<li class="nav-item">
+        <a class="nav-link" href="/logout">ออกจากระบบ</a>
+      </li>
+			<%}%>
+		</ul>
+  </div>
+</nav>
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <%# <center><img src="pic/logo.png" width="400" height="mx-auto" margin="0"></center> %>
+    <p><b>นิยาย</b></p>
+  </div>
+</div>
+
+
+	<%# <div class="container">
+		<div class="row">
+			<div class="product_title col-md-12" id="product_new">
+				นิยายใหม่ล่าสุด
+			</div>
+		</div>
+	</div> %>
+
+	<%# <main> %>
+		<%# <div id="carousel">
+       				<div class="hideLeftv cover">
+        				<img src="pic/cover/นางแค้น.jpg" height="auto">
+      				</div>
+
+      				<div class="prevLeftSecond cover">
+        				<img src="pic/cover/นางคุก.jpg" height="auto">
+      				</div>
+
+      				<div class="prev cover">
+        				<img src="pic/cover/นางคอย.jpg" height="auto">
+      				</div>
+
+      				<div class="selected cover">
+        				<img src="pic/cover/นางครวญ.jpg" height="auto">
+      				</div>
+
+      				<div class="next cover">
+        				<img src="pic/cover/บ่วงสไบ.jpg" height="auto">
+      				</div>
+
+      				<div class="nextRightSecond cover">
+        				<img src="pic/cover/วังนางโหง.jpg" height="auto">
+      				</div>
+
+      				<div class="hideRight cover">
+        				<img src="pic/cover/ดารันดา.jpg" height="auto">
+      				</div>
+    	</div>
+	</main>
+	<!--<div class="buttons">
+      		<button id="prev">Prev</button>
+      		<button id="next">Next</button>
+    	</div>-->
+
+    <div class="container">
+		<div class="row">
+			<div class="product_title col-md-12" id="product_pop">
+				นิยายยอดนิยม
+			</div>
+			<div class="col-md-12">
+				<table>
+					<tr id="pop1-2">
+						<td id="pop1" class="cover"><img src="pic/cover/สาปสังคีต.jpg"></td>
+						<td class="blank_pop"></td>
+						<td id="pop2" class="cover"><img src="pic/cover/เนตรมรณา.jpg"></td>
+					</tr>
+				</table>
+				<table>
+					<tr id="pop3-5">
+						<td class="cover" id="pop3"><img src="pic/cover/ตายไม่หลับ.jpg"></td>
+						<td class="blank_pop"></td>
+						<td class="cover" id="pop4"><img src="pic/cover/มิวเซียม.jpg"></td>
+						<td class="blank_pop"></td>
+						<td class="cover" id="pop4"><img src="pic/cover/ลิลิตเมืองมาร.jpg"></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div> %>
+	
+	<div class="container">
+		<div class="row">
+			<div class="product_title col-md-12">
+			<center><img src="pic/logo.png" width="500" height="mx-auto" margin="0"></center>
+				นิยายทั้งหมด
+			</div>
+		</div>
+	<%products.forEach(function (product){%>
+		<div class="row product_row">
+		<%for(let i=0;i<product.length;i++){%>
+			<div class="col-md-3">
+				<div class="cover"><a href='/book/<%= product[i]._id%>'><img src="<%= product[i].b_cover%>"></a></div><br>
+				<div class="b_name"><%= product[i].b_name%></div>
+				<div class="b_price"><%= product[i].b_price%> บาท<br></div>
+				<center><a href='/add-to-cart/<%= product[i]._id%>'><button>เพิ่มในตะกร้าสินค้า</button></a></center>
+			</div>
+			<%}%>
+		</div>
+		<%}); %>	
+		
+		<%# <div class="row">
+			<div class="col-md-12">
+				<nav aria-label="Page navigation example">
+  					<ul class="pagination justify-content-center">
+    					<li class="page-item">
+      						<a class="page-link" href="#" aria-label="Previous">
+        					<span aria-hidden="true">&laquo;</span>
+       						<span class="sr-only">Previous</span>
+      						</a>
+    					</li>
+    					<li class="page-item"><a class="page-link" href="#">1</a></li>
+    					<li class="page-item"><a class="page-link" href="#">2</a></li>
+    					<li class="page-item"><a class="page-link" href="#">3</a></li>
+   						<li class="page-item">
+      						<a class="page-link" href="#" aria-label="Next">
+        					<span aria-hidden="true">&raquo;</span>
+        					<span class="sr-only">Next</span>
+      						</a>
+    					</li>
+  					</ul>
+				</nav>
+			</div>
+		</div>
+	</div> %>
+
+</body>
+</html>

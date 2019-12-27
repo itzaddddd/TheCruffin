@@ -1,0 +1,138 @@
+<html>
+<head>
+	<title>The Cruffin - ตะกร้าสินค้า</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="cart_css.css">
+	<link href="https://fonts.googleapis.com/css?family=Prompt" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Kanit&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Chonburi&display=swap" rel="stylesheet">
+</head>
+<body>
+<nav class="nav navbar navbar-expand-lg navbar-dark fixed-top">
+  <a class="navbar-brand" href="/">The Cruffin</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="/book">นิยาย<span class="sr-only">(current)</span></a>
+      </li>
+			<li class="nav-item">
+        <a class="nav-link" href="/author">นักเขียน</a>
+      </li>
+			<li class="nav-item">
+        <a class="nav-link" href="/search">ค้นหา</a>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+			<%if(session.cart){%>
+			<li class="nav-item">
+        <a class="nav-link" href="/cart"><i class="fas fa-shopping-cart"></i>ตะกร้าสินค้า  <span class='badge badge-secondary'><%= session.cart.totalQty%></span></a>
+      </li>
+			<%}else{%>
+				<li class="nav-item">
+        <a class="nav-link" href="/cart"><i class="fas fa-shopping-cart"></i>ตะกร้าสินค้า </a>
+      </li>
+			<%}%>
+			<%if(!login){%>
+			<li class="nav-item">
+        <a class="nav-link" href="/regis">สมัครสมาชิก</a>
+      </li>
+			<li class="nav-item">
+        <a class="nav-link" href="/login">เข้าสู่ระบบ</a>
+      </li>
+			<%}else{%>
+			<li class="nav-item">
+        <a class="nav-link" href="/user"><%=user.username%></a>
+      </li>
+			<li class="nav-item">
+        <a class="nav-link" href="/logout">ออกจากระบบ</a>
+      </li>
+			<%}%>
+		</ul>
+  </div>
+</nav>
+	<div class="container">
+		<div class="row">
+			<div class="cart_title col-md-12">
+			<center><img src="pic/logo.png" width="300" height="mx-auto" margin="0"></center>
+				<i class="fas fa-shopping-cart"></i>     ตะกร้าสินค้า
+			</div>
+		</div>
+	</div>
+		<%if(products!=null){%>
+		<div class="cart">
+		<table cellspacing="0">
+      		<tr>
+      			<th><center>ลำดับ</center></th>
+      			<th><center>สินค้า</center></th>
+      			<th><center>ราคาต่อหน่วย</center></th>
+      			<th><center>จำนวน</center></th>
+      			<th><center>ราคารวม</center></th>
+      			<th><center>ลบ</center></th>
+			</tr>
+					  
+			<%for(let i=0;i<products.length;i++){%>
+				<tr class="cart">
+					<td><center><%= i+1%></center></td>
+					<td><center><%= products[i].item.b_name%></center></td>
+					<td><center><%= products[i].item.b_price%></center></td>
+					<td><center><%= products[i].qty%></center></td>
+					<td><center><%= products[i].price%></center></td>
+					<td><center><a href='/remove/<%= products[i].item._id%>'><span class="addressdelete"><i class="far fa-trash-alt"></i></span></a></center></td>
+				</tr>
+			<%}%>
+		</table>
+		
+		<table cellspacing="0" id='showprice'>
+			<tr>
+				<td id='price'> ราคารวม <%= totalPrice%> บาท</td>
+			</tr>
+		</table>
+
+    		<div class="button-panel">    
+      			<a href="/book"><button class="button">เลือกสินค้าเพิ่ม</button></a>
+    		</div>
+    		<div class="button-panel-b">    
+      			<a href="/pay"><button class="button">ชำระเงิน</button></a>
+    		</div>
+		</div>
+		<%}else if(!session.isPay){%>
+		<div class='container'>
+			<div class='row'>
+				<div class='col-md-11 noproduct'>
+					ไม่มีสินค้าในตะกร้า
+				</div>
+			</div>
+			<div class='row'>
+				<div class='col-md-12'>
+					<div class="button-panel">    
+      					<a href="/book"><button class="button">เลือกสินค้าเพิ่ม</button></a>
+    				</div>
+				</div>
+			</div>
+		</div>
+		<%}else{%>
+		<div class='container'>
+			<div class='row'>
+				<div class='col-md-11 noproduct'>
+					ชำระเงินเรียบร้อย
+				</div>
+			</div>
+			<div class='row'>
+				<div class='col-md-12'>
+					<div class="button-panel">    
+      					<a href="/book"><button class="button">เลือกสินค้าเพิ่ม</button></a>
+    				</div>
+				</div>
+			</div>
+		</div>
+		<%}%>
+	
+
+</body>
+</html>

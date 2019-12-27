@@ -1,0 +1,71 @@
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+	<link rel="stylesheet" type="text/css" href="/ad_au_edit_css.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Prompt" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Niramit" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Charm" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Kanit&display=swap" rel="stylesheet">
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 title">
+				แก้ไขข้อมูลนักเขียน
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<form action="/admin/au/<%= author._id%>?_method=PUT" method="POST" id="add_author">
+  					<div class="form-group row">
+    					<label for="A_PenName" class="col-sm-2 col-form-label">นามปากกา</label>
+    					<div class="col-sm-6">
+      						<input type="text" class="form-control" name="inputA_PenName" placeholder="ชื่อนักเขียน" value='<%= author.a_penname%>'>
+    					</div>
+  					</div>
+                    <div class="form-group row">
+    					<label for="A_Name" class="col-sm-2 col-form-label">ชื่อนักเขียน</label>
+    					<div class="col-sm-6">
+      						<input type="text" class="form-control" name="inputA_Name" placeholder="อีเมล" value='<%= author.a_name%>'>
+    					</div>
+  					</div>
+                    <div class="form-group row">
+    					<label for="A_Email" class="col-sm-2 col-form-label">อีเมล</label>
+    					<div class="col-sm-6">
+      						<input type="text" class="form-control" name="inputA_Email" placeholder="อีเมล" value='<%= author.a_email%>'>
+    					</div>
+  					</div>
+                    <div class="form-group row">
+    					<label for="A_Phone" class="col-sm-2 col-form-label">เบอร์โทรศัพท์</label>
+    					<div class="col-sm-6">
+      						<input type="text" class="form-control" name="inputA_Phone" placeholder="เบอร์โทรศัพท์" value='<%= author.a_phone%>'>
+    					</div>
+  					</div>
+  					<div class="form-group row">
+    					<label for="A_Int" class="col-sm-2 col-form-label">บทสัมภาษณ์</label>
+    					<div class="col-sm-6">
+   		 					<textarea class="form-control" rows="20" name="inputA_Interview" placeholder="บทสัมภาษณ์"><%= author.a_interview%></textarea>
+  						</div>
+  					</div>
+  					<div id="button_submit">
+  						<button class="btn">ยืนยัน</button>
+  					</div>
+				</form>
+                <div class="cancel">
+					<a href="/admin/au"><button class="btn">ยกเลิก</button></a>
+  				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

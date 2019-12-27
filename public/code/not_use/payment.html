@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>The Cruffin - ชำระเงิน</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel="stylesheet" type="text/css" href="payment_css.css">
+	<link href="https://fonts.googleapis.com/css?family=Prompt" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+</head>
+<body>
+	<div class="form-wrapper-main">
+		<h1>1.ตะกร้าสินค้า</h1>
+		<div class="form-wrapper1">
+			<form>
+			<table cellspacing="0" border="0">
+      			<tr>
+      				<th><center>ลำดับ</center></th>
+	      			<th><center>สินค้า</center></th>
+	      			<th><center>ราคาต่อหน่วย</center></th>
+	      			<th><center>จำนวน</center></th>
+	      			<th><center>ราคารวม</center></th>
+	      			<th><center>ลบ</center></th>
+	      		</tr>
+	      		<tr class="cart">
+	      			<td><center>1</center></td>
+					<td><center>นางแค้น</center></td>
+					<td><center>250.00</center></td>
+					<td><center><input type="number" name="quantity" value="2" min="1" max="99" class="quantity"></center></td>
+					<td><center>500.00</center></td>
+					<td><center><span class="addressdelete"><i class="far fa-trash-alt"></i></span></i></center></td>
+				</tr>
+				<tr class="cart">
+	      			<td><center>2</center></td>
+					<td><center>กลับชาติมาตาย</center></td>
+					<td><center>210.00</center></td>
+					<td><center><input type="number" name="quantity" value="1" min="1" max="99" class="quantity"></center></td>
+					<td><center>210.00</center></td>
+					<td><center><span class="addressdelete"><i class="far fa-trash-alt"></i></span></i></center></td>
+				</tr>
+				<tr class="cart">
+	      			<td><center>3</center></td>
+					<td><center>ลาตายสวัสดิ์</center></td>
+					<td><center>180.00</center></td>
+					<td><center><input type="number" name="quantity" value="1" min="1" max="99" class="quantity"></center></td>
+					<td><center>180.00</center></td>
+					<td><center><span class="addressdelete"><i class="far fa-trash-alt"></i></span></i></center></td>
+				</tr>
+	    	</table>
+	    	<p>ราคา (ไม่รวมค่าจัดส่ง) 890.00 บาท</p>
+	    	<div class="button-panel">    
+	      		<button class="button">เลือกสินค้าเพิ่ม</button>
+	    	</div>
+	    	<div class="button-panel-b">    
+	      		<input type="submit" name="comfirm1" class="button" value="ดำเนินการต่อ"></input>
+	    	</div>
+	    	</form>
+    	</div>
+    	<h1>2.การจัดส่ง</h1>
+    	<div class="form-wrapper2">
+    		<form>
+    		<h3>รูปแบบการจัดส่ง</h3>
+    		<div class="form-footer">
+    			<input type="radio" name="delivery" required="required">ลงทะเบียน (ฟรี)</input><br>
+    			<input type="radio" name="delivery" required="required">EMS (100 บาท
+    			</input>
+    		</div>
+    		<h3>ที่อยู่สำหรับจัดส่ง<span class="addressadd">เพิ่มที่อยู่</span></h3>
+    		<div class="form-footer">	
+    			<input type="radio"  name="address" required="required"><span class="addressdetail">126 ถนนประชาอุทิศ แขวงบางมด เขตทุ่งครุ กรุงเทพมหานคร</span></input>
+    		</div>
+    		<div class="button-panel">    
+	      		<button class="button">เลือกสินค้าเพิ่ม</button>
+	    	</div>
+	    	<div class="button-panel-b">    
+	      		<input type="submit" name="comfirm2" class="button" value="ดำเนินการต่อ"></input>
+	    	</div>
+	    	</form>
+    	</div>
+    	<h1>3.ตรวจสอบและยืนยันการสั่งซื้อ</h1>
+    	<div class="form-wrapper3">
+    		<br>
+    		<div class="form-wrapper-sub">
+    			<h2>รายการสินค้า</h2>
+    			<table cellspacing="0" border="0">
+      			<tr>
+      				<th><center>ลำดับ</center></th>
+	      			<th><center>สินค้า</center></th>
+	      			<th><center>ราคาต่อหน่วย</center></th>
+	      			<th><center>จำนวน</center></th>
+	      			<th><center>ราคารวม</center></th>
+	      		</tr>
+	      		<tr class="cart">
+	      			<td><center>1</center></td>
+					<td><center>นางแค้น</center></td>
+					<td><center>250.00</center></td>
+					<td><center><span class="quantity">2</span></center></td>
+					<td><center>500.00</center></td>
+				</tr>
+				<tr class="cart">
+	      			<td><center>2</center></td>
+					<td><center>กลับชาติมาตาย</center></td>
+					<td><center>210.00</center></td>
+					<td><center><span class="quantity">1</span></center></td>
+					<td><center>210.00</center></td>
+				</tr>
+				<tr class="cart">
+	      			<td><center>3</center></td>
+					<td><center>ลาตายสวัสดิ์</center></td>
+					<td><center>180.00</center></td>
+					<td><center><span class="quantity">1</span></center></td>
+					<td><center>180.00</center></td>
+				</tr>
+	    	</table>
+	    	<p>ราคา 990.00 บาท</p>
+    		<h2>การจัดส่ง</h2>
+    		<h3>ที่อยู่สำหรับจัดส่ง</h3>
+    			<div class="form-footer">
+    				126 ถนนประชาอุทิศ แขวงบางมด เขตทุ่งครุ กรุงเทพมหานคร
+    			</div>
+    		</div>
+    		<div class="button-panel">    
+	      		<button class="button">เลือกสินค้าเพิ่ม</button>
+	    	</div>
+	    	<div class="button-panel-b">    
+	      		<button class="button">ยืนยันการสั่งซื้อ</button>
+	    	</div>
+    	</div>
+    	<h1>4.สั่งซื้อสินค้าเรียบร้อย</h1>
+    	<div class="form-wrapper4">
+    		<h4><span class="big">สั่งซื้อสินค้าเรียบร้อยแล้ว</span></h4>
+    		<h4><span class="medium">รอการชำระเงิน</span></h4>
+    		<br>
+    		<h4>เลขที่สั่งซื้อ</h4>
+    		<h4><span class="detail" name="productno">P0-201900966</span></h4>
+    		<br>
+    		<h4>จำนวนเงินที่ต้องชำระ</h4>
+    		<h4><span class="detail" name="price">990.00 บาท</span></h4>
+    		<br>
+    		<h4>กรุณาชำระเงินภายในวันที่</h4>
+    		<h4><span class="detail" name="date">30/03/62</span></h4>
+    		<div class="button-panel-c">    
+      			<button class="button"><a href="howto.html">วิธีชำระเงิน</a></button>
+    		</div>
+    	</div>
+    </div>			
+</body>
+</html>

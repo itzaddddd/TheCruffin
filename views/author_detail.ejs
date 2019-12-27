@@ -1,0 +1,120 @@
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+	<link rel="stylesheet" type="text/css" href="/author_detail_css.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Prompt" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Niramit" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Charm" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Kanit&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Chonburi&display=swap" rel="stylesheet">
+
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<body>
+<nav class="nav navbar navbar-expand-lg navbar-dark fixed-top">
+  <a class="navbar-brand" href="/">The Cruffin</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="/book">นิยาย<span class="sr-only">(current)</span></a>
+      </li>
+			<li class="nav-item">
+        <a class="nav-link" href="/author">นักเขียน</a>
+      </li>
+			<li class="nav-item">
+        <a class="nav-link" href="/search">ค้นหา</a>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+			<%if(session.cart){%>
+			<li class="nav-item">
+        <a class="nav-link" href="/cart"><i class="fas fa-shopping-cart"></i>ตะกร้าสินค้า  <span class='badge badge-secondary'><%= session.cart.totalQty%></span></a>
+      </li>
+			<%}else{%>
+				<li class="nav-item">
+        <a class="nav-link" href="/cart"><i class="fas fa-shopping-cart"></i>ตะกร้าสินค้า </a>
+      </li>
+			<%}%>
+			<%if(!login){%>
+			<li class="nav-item">
+        <a class="nav-link" href="/regis">สมัครสมาชิก</a>
+      </li>
+			<li class="nav-item">
+        <a class="nav-link" href="/login">เข้าสู่ระบบ</a>
+      </li>
+			<%}else{%>
+			<li class="nav-item">
+        <a class="nav-link" href="/user"><%=user.username%></a>
+      </li>
+			<li class="nav-item">
+        <a class="nav-link" href="/logout">ออกจากระบบ</a>
+      </li>
+			<%}%>
+		</ul>
+  </div>
+</nav>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12" id="author_name">
+				<%= author.a_penname%>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<img src="<%= author.a_pic%>" width="400" height="400">
+			</div>
+			<div class="col-md-6">
+				<p><%= author.a_interview%></p>
+			</div>
+		</div>
+			<div class="button-panel">
+      	 <a href='/author'><button class="button">กลับไปหน้าเดิม</button></a>
+      </div>
+        <%# <div class="row">
+			<div class="col-md-4" id="port_title">
+				ผลงานที่ผ่านมา
+			</div>
+			<div class="catalog">
+	      		<div class="booklist">
+					<article class="bookbox">
+	          			<a href="#"><img src="/pic/cover/นางครวญ.jpg" class="bookpic"></a><br>
+	          			<h3>นางครวญ</h3><br>
+	        		</article>
+				</div>
+				<div class="booklist">
+					<article class="bookbox">
+	          			<a href="#"><img src="/pic/cover/นางแค้น.jpg" class="bookpic"></a><br>
+	          			<h3>นางแค้น</h3><br>
+	        		</article>
+				</div>
+				<div class="booklist">
+					<article class="bookbox">
+	          			<a href="#"><img src="/pic/cover/นางคุก.jpg" class="bookpic"></a><br>
+	          			<h3>นางคุก</h3><br>
+	        		</article>
+				</div>
+				<div class="booklist">
+					<article class="bookbox">
+	          			<a href="#"><img src="/pic/cover/นางคอย.jpg" class="bookpic"></a><br>
+	          			<h3>นางคอย</h3><br>
+	        		</article>
+				</div>
+    		</div>
+		</div> %>
+	</div>
+
+	<% include ./partials/footer %>
+</body>
+</html>

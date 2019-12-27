@@ -1,0 +1,104 @@
+body {
+  background: black;
+  color: #fafafa;
+  font-family: 'Prompt', sans-serif;
+}
+
+.form-wrapper-main {
+  background: black;
+  margin:3em auto;
+  padding: 0 1em;
+  max-width: 1300px;
+}
+
+h3 {
+  background: #7334BD;
+	display: inline-block;
+  vertical-align: middle;
+  padding: 3px 5px;
+}
+
+h4 {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 3px 5px;
+}
+
+table {
+  background: #E3E3E3;
+  width: 101%;
+  margin:1em auto;
+  max-width: 1140px;
+}
+
+th {
+  background: #081B82;
+  color: #fafafa;
+  font-size: 0.95em;
+  padding-top: 10px;
+  padding-bottom: 10px;  
+}
+
+td {
+  color: black;
+  padding-top: 10px;
+  padding-bottom: 10px; 
+  font-size: 0.95em;
+}
+
+.form-wrapper {
+  background: #E3E3E3;
+  margin:1em auto;
+  padding: 0 1em;
+  max-width: 1100px;
+  font-size: 1.2em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+label {
+  color: black;
+  display: inline-block;
+	width: 25%;
+	text-align: right;
+	margin: 10px;
+}
+
+span.detail {
+  color: black;
+  display: inline-block;
+  text-align: left;
+  width: 25%;
+  margin: 10px;
+}
+
+
+.button-panel {
+  margin: 2em 0 0;
+  width: 30%;
+  margin-left: 42%;
+}
+
+.button a {
+  font-family: 'Prompt', sans-serif;
+  color: #fafafa;
+  text-decoration: none;
+}
+
+.button-panel .button {
+  background: #7334BD;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  height: 50px;
+  font-family: 'Prompt', sans-serif;
+  font-size: 0.95em;
+  letter-spacing: 0.05em;
+  text-align: center;
+  text-transform: uppercase;
+  width: 50%;
+}
+
+.button:hover {
+  background: #5917A7;
+}

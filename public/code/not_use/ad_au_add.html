@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<title></title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+	<link rel="stylesheet" type="text/css" href="ad_au_add_css.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Prompt" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Niramit" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Charm" rel="stylesheet">
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<body>
+	<div class="title">
+		เพิ่มข้อมูลนักเขียน
+	</div>
+  <form id="add_author" action="/add_author" method="POST">
+            <div class="form-group row">
+              <label for="A_Name" class="col-sm-2 col-form-label">ชื่อนักเขียน</label>
+              <div class="col-sm-6">
+                  <input type="text" class="form-control" id="inputA_Name" 
+                  name="inputA_Name" placeholder="ชื่อนักเขียน">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="A_Pic" class="col-sm-2 col-form-label">รูปนักเขียน</label>
+              <div class="col-sm-6">  
+                <input type="file" class="form-control-file" id="inputA_Pic"
+                name="inputA_Pic">
+
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="A_Interview" class="col-sm-2 col-form-label">บทสัมภาษณ์</label>
+              <div class="col-sm-6">
+                <textarea class="form-control" id="inputA_Interview" rows="20" placeholder="บทสัมภาษณ์" name="inputA_Interview"></textarea>
+              </div>
+            </div>
+            <div id="button_submit">
+              <button class="btn btn-primary">ยืนยัน</button>
+            </div>
+            
+            
+        </form>
+
+</body>
+</html>

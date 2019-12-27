@@ -1,0 +1,32 @@
+body{
+	background: #860000;
+	text-align: left;
+	font-family: 'Kanit', sans-serif;
+	color: white;
+
+}
+
+.title{
+	background-color: #860000;
+	font-size: 30px;
+	padding: 20px;
+	text-align: center;
+}
+
+.b_form{
+	margin-bottom: 5px;
+}
+
+.btn{
+	background-color:rgb(230, 6, 6);
+	color:white;
+}
+
+#button_submit{
+	text-align: center;
+}
+
+#add_book{
+	margin: 0px;
+}
+

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>The Cruffin - สมัครสมาชิก</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel="stylesheet" type="text/css" href="regis_css.css">
+	<link href="https://fonts.googleapis.com/css?family=Prompt" rel="stylesheet">
+</head>
+<body>
+	<div class="form-wrapper-main">
+	<form action="/regis" method="POST">
+	<h3>ข้อมูลสมาชิก</h3>
+		<div class="form-wrapper">
+    		<div class="form-item">
+      			<label for="username">ชื่อผู้ใช้*</label>		
+      			<input type="text" name="username" required="required"></input>
+    		</div>
+    		<div class="form-item">
+      			<label for="password">รหัสผ่าน*</label>		
+      			<input type="password" name="password1" required="required"></input>
+    		</div>
+    		<div class="form-item">
+      			<label for="password">ยืนยันรหัสผ่าน*</label>		
+      			<input type="password" name="password2" required="required"></input>
+    		</div>
+    		<div class="form-item">
+      			<label for="email">ใส่อีเมล*</label>		
+      			<input type="email" name="email" required="required"></input>
+    		</div>
+    	</div>	
+	<h3>ข้อมูลส่วนตัว</h3>
+		<div class="form-wrapper">
+    		<div class="form-item">
+      			<label for="name">ชื่อ*</label>		
+      			<input type="text" name="firstname" required="required"></input>
+    		</div>
+    		<div class="form-item">
+      			<label for="surname">นามสกุล*</label>		
+      			<input type="text" name="lastname" required="required"></input>
+    		</div>
+    		<div class="form-footer">
+      			<label for="gender">เพศ*</label>		
+      			<input type="radio" name="gender" value="Male" required="required"> ผู้ชาย</input>
+      			<input type="radio" name="gender" value="Female" required="required"> ผู้หญิง</input>
+    		</div>
+    	</div>
+    	<h3>ข้อมูลที่อยู่</h3>
+		<div class="form-wrapper">
+    		<div class="form-item">
+      			<label for="เลขที่">เลขที่*</label>		
+      			<input type="text" name="addr_house_no" required="required"></input>
+    		</div>
+    		<div class="form-item">
+      			<label for="หมู่บ้าน">หมู่บ้าน</label>		
+      			<input type="text" name="addr_village"></input>
+    		</div>
+    		<div class="form-item">
+      			<label for="หมู่ที่">หมู่ที่</label>		
+      			<input type="text" name="addr_village_no"></input>
+    		</div>
+    		<div class="form-item">
+      			<label for="ซอย">ซอย</label>		
+      			<input type="text" name="addr_lane"></input>
+    		</div>
+    		<div class="form-item">
+      			<label for="ถนน">ถนน</label>		
+      			<input type="text" name="addr_road"></input>
+    		</div>
+    		<div class="form-item">
+      			<label for="จังหวัด">จังหวัด*</label>		
+      			<input type="text" name="addr_province" required="required"></input>
+    		</div>
+    		<div class="form-item">
+      			<label for="อำเภอ">อำเภอ*</label>		
+      			<input type="text" name="addr_district" required="required"></input>
+    		</div>
+    		<div class="form-item">
+      			<label for="ตำบล">ตำบล*</label>		
+      			<input type="text" name="addr_sub_district" required="required"></input>
+    		</div>
+    		<div class="form-item">
+      			<label for="รหัสไปรษณีย์">รหัสไปรษณีย์*</label>		
+      			<input type="text" name="addr_postal_code" required="required"></input>
+    		</div>
+    		<div class="form-item">
+      			<label for="ชื่อผู้ติดต่อ">ชื่อผู้ติดต่อ</label>		
+      			<input type="text" name="contact_name"></input>
+    		</div>
+    		<div class="form-item">
+      			<label for="เบอร์โทรศัพท์มือถือ">เบอร์โทรศัพท์มือถือ*</label>		
+      			<input type="tel" name="phone_number" pattern="[0-9]{10}" required="required"></input>
+    		</div>
+    	</div>
+    	<div class="button-panel">
+      		<input type="submit" class="button" value="ยืนยันข้อมูล"></input>
+      	</div>	
+      	</form>
+	</div>
+</body>
+</html>

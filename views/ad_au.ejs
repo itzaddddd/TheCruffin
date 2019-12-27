@@ -1,0 +1,93 @@
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="http://www.jacklmoore.com/colorbox/example1/colorbox.css" />
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	
+	<script type="text/javascript" src="/ad_au_js.js" defer></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="http://www.jacklmoore.com/colorbox/jquery.colorbox.js"></script>
+	<link rel="stylesheet" type="text/css" href="/ad_au_css.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Prompt" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Niramit" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Charm" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Kanit&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Chonburi&display=swap" rel="stylesheet">
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<body>
+<nav class="nav navbar navbar-expand-lg navbar-dark fixed-top">
+  <a class="navbar-brand" href="/">The Cruffin</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+		<li class="nav-item">
+        	<a class="nav-link" href="/admin">หน้าหลัก<span class="sr-only">(current)</span></a>
+      	</li>
+    	<li class="nav-item">
+        	<a class="nav-link" href="/admin/book">ข้อมูลสินค้า</a>
+      	</li>
+		<li class="nav-item">
+        	<a class="nav-link" href="/admin/au">ข้อมูลนักเขียน</a>
+      	</li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+		<li class="nav-item">
+        	<a class="nav-link" href="/book">ไปที่ร้านค้า</a>
+      	</li>
+		<li class="nav-item">
+        	<a class="nav-link" href="/user"><%=user.username%></a>
+      	</li>
+		<li class="nav-item">
+        	<a class="nav-link" href="/logout">ออกจากระบบ</a>
+      	</li>
+	</ul>
+  </div>
+</nav>
+	<div class="caption">ข้อมูลนักเขียน</div>
+		<button class="author_add">เพิ่มนักเขียน</button>
+		<div class="search">
+			<form class="form-inline active-cyan-4">
+  			<input class="form-control form-control-sm mr-3 w-60" type="text" placeholder="Search" aria-label="Search">
+  			<i class="fas fa-search"></i>
+			</form>
+		</div>
+		<center><table id="author_all">
+			<tr class='htitle'>
+				<th width='1%'>ลำดับ</th>
+				<th width='4%'>นามปากกา</th>
+				<th width='10%'>รูปนักเขียน</th>
+				<th width='15%'>ชื่อนักเขียน</th>
+				<th width='10%'>เบอร์โทรศัพท์</th>
+				<th width='12%'>อีเมล</th>
+				<th width='47%'>บทสัมภาษณ์</th>
+				<th width='1%'>จัดการ</th>
+			</tr>
+			<% authors.forEach(function(author,index){%>
+			<tr>
+				<td><%= index+1%></td>
+				<td><%= author.a_penname%></td>
+				<td><img src="<%= author.a_pic%>"></td>
+				<td><%= author.a_name%></td>
+				<td><%= author.a_phone%></td>
+				<td><%= author.a_email%></td>
+				<td><%= author.a_interview%></td>
+				<td>
+					<form action="/admin/au/<%= author._id%>?_method=DELETE" method="POST"><button class='btn btn-link'>ลบ</button></form><br>
+					<a href="/admin/au/<%= author._id%>">แก้ไข</a>	
+				</td>
+			</tr>
+			<% }); %>
+		</table></center>
+	</div>
+
+
+</body>
+</html>

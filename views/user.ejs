@@ -1,0 +1,157 @@
+<html>
+<head>
+	<title>The Cruffin - ข้อมูลสมาชิก</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel="stylesheet" type="text/css" href="user_css.css">
+	<link href="https://fonts.googleapis.com/css?family=Prompt" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+		<link href="https://fonts.googleapis.com/css?family=Kanit&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Chonburi&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Kanit&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Chonburi&display=swap" rel="stylesheet">
+
+</head>
+<body>
+<nav class="nav navbar navbar-expand-lg navbar-dark fixed-top">
+  <a class="navbar-brand" href="/">The Cruffin</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="/book">นิยาย<span class="sr-only">(current)</span></a>
+      </li>
+			<li class="nav-item">
+        <a class="nav-link" href="/author">นักเขียน</a>
+      </li>
+			<li class="nav-item">
+        <a class="nav-link" href="/search">ค้นหา</a>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+			<%if(session.cart){%>
+			<li class="nav-item">
+        <a class="nav-link" href="/cart"><i class="fas fa-shopping-cart"></i>ตะกร้าสินค้า  <span class='badge badge-secondary'><%= session.cart.totalQty%></span></a>
+      </li>
+			<%}else{%>
+				<li class="nav-item">
+        <a class="nav-link" href="/cart"><i class="fas fa-shopping-cart"></i>ตะกร้าสินค้า </a>
+      </li>
+			<%}%>
+			<%if(!login){%>
+			<li class="nav-item">
+        <a class="nav-link" href="/regis">สมัครสมาชิก</a>
+      </li>
+			<li class="nav-item">
+        <a class="nav-link" href="/login">เข้าสู่ระบบ</a>
+      </li>
+			<%}else{%>
+			<li class="nav-item">
+        <a class="nav-link" href="/user"><%=user.username%></a>
+      </li>
+			<li class="nav-item">
+        <a class="nav-link" href="/logout">ออกจากระบบ</a>
+      </li>
+			<%}%>
+		</ul>
+  </div>
+</nav>
+<nav class="nav navbar navbar-expand-lg navbar-dark fixed-top">
+  <a class="navbar-brand" href="/">The Cruffin</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="/book">นิยาย<span class="sr-only">(current)</span></a>
+      </li>
+			<li class="nav-item">
+        <a class="nav-link" href="/author">นักเขียน</a>
+      </li>
+			<li class="nav-item">
+        <a class="nav-link" href="/search">ค้นหา</a>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+			<%if(session.cart){%>
+			<li class="nav-item">
+        <a class="nav-link" href="/cart"><i class="fas fa-shopping-cart"></i>ตะกร้าสินค้า  <span class='badge badge-secondary'><%= session.cart.totalQty%></span></a>
+      </li>
+			<%}else{%>
+				<li class="nav-item">
+        <a class="nav-link" href="/cart"><i class="fas fa-shopping-cart"></i>ตะกร้าสินค้า </a>
+      </li>
+			<%}%>
+			<%if(!login){%>
+			<li class="nav-item">
+        <a class="nav-link" href="/regis">สมัครสมาชิก</a>
+      </li>
+			<li class="nav-item">
+        <a class="nav-link" href="/login">เข้าสู่ระบบ</a>
+      </li>
+			<%}else{%>
+			<li class="nav-item">
+        <a class="nav-link" href="/user"><%=user.username%></a>
+      </li>
+			<li class="nav-item">
+        <a class="nav-link" href="/logout">ออกจากระบบ</a>
+      </li>
+			<%}%>
+		</ul>
+  </div>
+</nav>
+
+	<div class="jumbotron jumbotron-fluid">
+  		<div class="container">
+    		<%# <center><img src="pic/logo.png" width="300" height="mx-auto" margin="0"></center> %>
+    		<p><b>ข้อมูลผู้ใช้</b></p>
+  		</div>
+	</div>
+	<center><img src="pic/logo.png" width="400" height="mx-auto"></center>
+	<div class="form-wrapper-main">
+		<h1>ข้อมูลสมาชิก</h1>
+		<div class="form-wrapper">
+      		<label>ชื่อผู้ใช้</label>		
+      		<span class="detail" name="username"><%= user.username%></span><br>
+      		<label>อีเมล</label>
+      		<span class="detail" name="email"><%= user.email%></span><br>
+			<label>หมายเลขโทรศัพท์</label>
+			<span class="detail" name="signupdate"><%= user.phone%></span><br> 
+      		<label>ลงทะเบียนเมื่อ</label>		
+      		<span class="detail" name="signupdate">24/03/2561</span><br>
+      		<label>ชื่อ</label>		
+      		<span class="detail" name="name"><%= user.firstname%>     <%=user.lastname%></span><br>
+      		<label>เพศ</label>
+      		<span class="detail" name="gender"><%= user.gender%></span><br>
+			<div class="button-panel"> 		  
+      			<button class="button"><a href="/user/edit">แก้ไขข้อมูล</a></button>
+    		</div>	
+    	</div>	
+		<h1>ข้อมูลที่อยู่</h1>
+    		<table cellspacing="0" border="0">
+      		<tr>
+      			<th><center>ที่อยู่</center></th>
+      		</tr>
+      		<tr class="addressdetail">
+				<td><center><%= user.address.house_no%> หมู่ที่<%= user.address.village_no%> หมู่บ้าน<%= user.address.village%> ซอย<%= user.address.lane%> ถนน<%= user.address.road%> ตำบล<%= user.address.sub_district%> อำเภอ<%= user.address.district%> จังหวัด<%= user.address.province%> รหัสไปรษณีย์<%= user.address.postal_code%></center></td>
+			</tr>
+    		</table>
+    <h1>ประวัติการสั่งซื้อ</h1>
+    		<table cellspacing="0" border="0">
+      		<tr>
+      			<th><center>ลำดับ</center></th>
+      			<th><center>เลขใบสั่งซื้อ</center></th>
+      			<th><center>วันที่สั่งซื้อ</center></th>
+      			<th><center>ราคา</center></th>
+      			<th><center>การชำระเงิน</center></th>
+      			<th><center>การจัดส่ง</center></th>
+      			<th><center>จัดการ</center></th>
+      		</tr>
+    		</table>
+    </div>	
+</body
