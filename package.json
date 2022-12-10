@@ -17,7 +17,7 @@
     "csurf": "^1.10.0",
     "ejs": "^2.6.1",
     "ejs-lint": "^0.3.0",
-    "express": "^4.17.0",
+    "express": "^4.17.3",
     "express-session": "^1.16.1",
     "gridfs-easy": "^1.0.4",
     "locals": "0.0.4",
